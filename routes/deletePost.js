@@ -9,7 +9,7 @@ deleteRoute.get('/:id/delete', (req, res) => {
     conn.query(sql, (err, result) => {
         if (err) throw err
         console.log(result);
-        res.redirect('/home')
+        res.redirect('/')
     })
 
 })

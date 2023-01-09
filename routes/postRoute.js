@@ -15,7 +15,7 @@ postRoute.post('/blog/post', (req, res) => {
     conn.query(sql, bodyObj, (err, result) => {
         if (err) throw err
         console.log(result);
-        res.redirect('/home')
+        res.redirect('/')
     })
 })
 

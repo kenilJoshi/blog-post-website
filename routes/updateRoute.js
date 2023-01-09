@@ -14,7 +14,7 @@ updateRoute.post('/:id/update?', (req, res) => {
     conn.query(sql, newObj, (err, result) => {
         if (err) throw err
         console.log(result);
-        res.redirect('/home')
+        res.redirect('/')
     })
 
 })
