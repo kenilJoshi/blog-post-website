@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h2>CRUD Operation</h2>
+    </div>
+    <div>
+        <form action="/blog/post" method="post">
+            <label for="username"> Title:</label>
+            <input type="text" id="Title" name="Title" placeholder="Title" required>
+            <br>
+            <label for="freeform">Blog Post:</label>
+            <br>
+            <textarea id="main_body" name="main_body" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Post</button>  
+        </form>
+    </div>
+
+    <div>
+        <h2>Blogs</h2>
+    <% results.forEach(function(result,i){ %>
+        <%= result.Title %>
+        <br>
+        <%= result.main_body %>
+        <br>
+        <div style="display: flex;">
+        <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
+        <a href="/:<%=result.idPosts%>/delete"><button>Delete</button></a>
+        </div>
+        <br>
+        <div id="displayEditForm" style="display: none;">
+        <form method="post" action="/:<%= result.idPosts %>/update">
+            <label for="username"> Title:</label>
+            <input type="text" id="Title" name="Title" placeholder="Title" required>
+            <label for="freeform">Blog Post:</label>
+            <br>
+            <textarea id="main_body" name="main_body" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Edit</button>  
+        </form>
+    </div>
+        <hr>
+    <% }) %>
+    </div>
+</body>
+<script>
+    function displayFunction(){
+        const displayEditForm=document.getElementById('displayEditForm')
+        const editForm=document.getElementById('editForm')
+        if(displayEditForm.style.display==="none"){
+            displayEditForm.style.display="block"
+            editForm.style.display="none"
+        }else{
+            displayEditForm.style.display="none"
+            editForm.style.display="block"
+        }
+    }
+</script>
+</html>
