@@ -8,6 +8,7 @@ const { postRoute } = require('./routes/postRoute')
 const { updateRoute } = require('./routes/updateRoute')
 const { deleteRoute } = require('./routes/deletePost')
 
+const hostname = '0.0.0.0'
 
 app.use(express.json())
 
@@ -25,6 +26,6 @@ app.use(postRoute)
 app.use(updateRoute)
 app.use(deleteRoute)
 
-app.listen(PORT, () => {
-    console.log(`server is running`);
+app.listen(PORT, hostname, () => {
+    console.log(`server is running http://${hostname}:${PORT}/`);
 })
