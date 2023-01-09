@@ -1,6 +1,8 @@
 const express = require("express")
 const bodyParser = require("body-parser")
 const app = express()
+const http = require("http");
+const server = http.createServer(app);
 // const expressLayout = require('express-ejs-layouts')
 const path = require('path')
 const { homeRoute } = require('./routes/homeRoute')
@@ -26,6 +28,6 @@ app.use(postRoute)
 app.use(updateRoute)
 app.use(deleteRoute)
 
-app.listen(PORT, hostname, () => {
+server.listen(PORT, '0.0.0.0', () => {
     console.log(`server is running http://${hostname}:${PORT}/`);
 })
