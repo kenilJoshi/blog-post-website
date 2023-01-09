@@ -26,9 +26,10 @@
     <div>
         <h2>Blogs</h2>
     <% results.forEach(function(result,i){ %>
-        <%= result.Title %>
+        <h4>Title:<%= result.Title %>
         <br>
-        <%= result.main_body %>
+        Blog:<%= result.main_body %>
+        </h4>
         <br>
         <div style="display: flex;">
         <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
