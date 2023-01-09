@@ -11,6 +11,7 @@ homeRoute.get('/home', (req, res) => {
     conn.query("SELECT * FROM railway.posts;", function (err, result) {
         if (err) throw err
         res.render("../views/home", { results: result })
+
     })
 })
 

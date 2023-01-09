@@ -8,7 +8,7 @@ postRoute.post('/blog/post', (req, res) => {
 
     const bodyObj = {
         Title: req.body.Title,
-        main_body: req.body.main_body
+        main_blog: req.body.main_body
     }
 
     console.log(req.body);
