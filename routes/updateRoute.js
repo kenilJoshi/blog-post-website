@@ -8,7 +8,8 @@ updateRoute.post('/:id/update?', (req, res) => {
     console.log('kenil');
     let newObj = req.body
     let _id = req.params.id.replace(":", "")
-    let sql = `UPDATE posts SET ? WHERE idPosts=${_id} `
+    console.log(_id);
+    let sql = `UPDATE posts SET ? WHERE idposts=${_id} `
 
     conn.query(sql, newObj, (err, result) => {
         if (err) throw err
