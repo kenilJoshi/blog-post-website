@@ -30,6 +30,6 @@ app.use(postRoute)
 app.use(updateRoute)
 app.use(deleteRoute)
 
-server.listen(PORT, hostname, () => {
+server.listen(PORT, () => {
     console.log(`server is running`);
 })
