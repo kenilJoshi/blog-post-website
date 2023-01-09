@@ -8,6 +8,7 @@ const { postRoute } = require('./routes/postRoute')
 const { updateRoute } = require('./routes/updateRoute')
 const { deleteRoute } = require('./routes/deletePost')
 
+
 app.use(express.json())
 
 // app.use(expressLayout);
@@ -25,5 +26,5 @@ app.use(updateRoute)
 app.use(deleteRoute)
 
 app.listen(PORT, () => {
-    console.log('server is running');
+    console.log(`server is running`);
 })
