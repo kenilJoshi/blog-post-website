@@ -174,7 +174,7 @@
         </div>
         </div>
         <br>
-        <div id="displayEditForm" style="display: none;">
+        <div id="displayEditForm" style="display: block;">
         <form method="post" action="/:<%= result.idposts %>/update">
             <label for="username"> Title:</label>
             <input type="text" id="Title" name="Title" placeholder="Title">
@@ -195,21 +195,5 @@
     </div>
     </div>
 </body>
-<script>
-        const displayEditForm=document.getElementsByClassName('editForm')
-        
-        for(var i=0;i<displayEditForm.length;i++){
-            displayEditForm[i].addEventListener('click',()=>{
-                console.log(i);
-                const editForm=document.getElementById('displayEditForm')
-        if(editForm.style.display==="none"){
-            editForm.style.display="block"
-            // editForm.style.display="none"
-        }else{
-            editForm.style.display="none"
-            // editForm.style.display="block"
-        }
-            })
-        }
-</script>
+
 </html>
