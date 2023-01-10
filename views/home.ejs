@@ -25,6 +25,10 @@
 
     <div>
         <h2>Blogs</h2>
+        <form method="get" action="/getUser">
+            <input type="text" name="Title" />
+            <button type="submit">Search</button>
+        </form>
         <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
         <h4>Title:<%= result.Title %>

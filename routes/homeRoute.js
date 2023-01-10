@@ -11,6 +11,15 @@ homeRoute.get('/', (req, res) => {
     })
 })
 
+homeRoute.get('/getUser', (req, res) => {
+    let sql = `SELECT * FROM railway.posts
+    WHERE Title='${req.body.Title}';`
+    conn.query(sql, function (err, result) {
+        if (err) throw err
+        res.render()
+    })
+})
+
 
 module.exports = {
     homeRoute
