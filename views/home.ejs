@@ -169,7 +169,7 @@
         </h4>
         <br>
         <div style="display: flex; flex-direction: column;">
-        <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
+        <button class="editForm" style="display: block;" >Edit</button>
         <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
         </div>
         </div>
@@ -196,16 +196,18 @@
     </div>
 </body>
 <script>
-    function displayFunction(){
-        const displayEditForm=document.getElementById('displayEditForm')
-        const editForm=document.getElementById('editForm')
-        if(displayEditForm.style.display==="none"){
-            displayEditForm.style.display="block"
-            editForm.style.display="none"
-        }else{
-            displayEditForm.style.display="none"
+        const displayEditForm=document.getElementsByClassName('editForm')
+        for(var i=0;i<displayEditForm.length;i++){
+            displayEditForm[i].addEventListener('click',()=>{
+                const editForm=document.getElementById('displayEditForm')
+        if(editForm.style.display==="none"){
             editForm.style.display="block"
+            // editForm.style.display="none"
+        }else{
+            editForm.style.display="none"
+            // editForm.style.display="block"
         }
-    }
+            })
+        }
 </script>
 </html>
