@@ -103,11 +103,7 @@
     }
     .blog-real-ssection{
         display: flex;
-        flex-direction: column;
         padding: 12px;
-    }
-    .only-blog{
-        display: flex;
     }
     .blog-real-ssection h4{
         width: 237px;
@@ -166,30 +162,29 @@
         <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
         <div class="blog-real-ssection">
-            <div class="only-blog">
-                <h4>
-                    Title:<%= result.Title %>
-                    <br>
-                    Blog:<%= result.main_blog %>
-                </h4>
-                <br>
-                <div style="display: flex; flex-direction: column;">
-                    <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
-                    <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
-                </div>
-            </div>
-            <br>
-            <div id="displayEditForm" style="display: none;">
-                <form method="post" action="/:<%= result.idposts %>/update">
-                <label for="username"> Title:</label>
-                <input type="text" id="Title" name="Title" placeholder="Title">
-                <label for="freeform">Blog Post:</label>
-                <br>
-                <textarea id="main_blog" name="main_blog" rows="4" cols="50"></textarea>
-                <br>
-                <button type="submit">Edit</button>  
-            </form>
+            <div>
+        <h4>Title:<%= result.Title %>
+        <br>
+        Blog:<%= result.main_blog %>
+        </h4>
+        <br>
+        <div style="display: flex; flex-direction: column;">
+        <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
+        <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
         </div>
+        
+        <br>
+        <div id="displayEditForm" style="display: none;">
+        <form method="post" action="/:<%= result.idposts %>/update">
+            <label for="username"> Title:</label>
+            <input type="text" id="Title" name="Title" placeholder="Title">
+            <label for="freeform">Blog Post:</label>
+            <br>
+            <textarea id="main_blog" name="main_blog" rows="4" cols="50"></textarea>
+            <br>
+            <button type="submit">Edit</button>  
+        </form>
+    </div>
         <hr>
     </div>
     <% }) %>
