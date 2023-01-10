@@ -14,7 +14,7 @@ homeRoute.get('/', (req, res) => {
 homeRoute.get('/getUser', (req, res) => {
     console.log(req.body.Title);
     let sql = `SELECT * FROM railway.posts
-    WHERE Title='${req.body.Title}';`
+    WHERE Title='${req.body.title}';`
     conn.query(sql, function (err, result) {
         if (err) throw err
 
