@@ -17,6 +17,7 @@ homeRoute.get('/getUser', (req, res) => {
     WHERE Title='${req.body.Title}';`
     conn.query(sql, function (err, result) {
         if (err) throw err
+
         res.render("../views/home", { results: result })
     })
 })
