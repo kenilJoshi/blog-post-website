@@ -19,6 +19,7 @@ homeRoute.post('/getUser', (req, res) => {
         conn.query(sql, function (err, result) {
             if (err) throw err
 
+
             res.render("../views/home", { results: result })
         })
     } else if (req.body.title === '') {
