@@ -161,9 +161,9 @@
         <div class="blog-container-section">
         <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
-        <div class="blog-real-ssection">
-            <div style="display: flex; flex-direction: column;">
-        <h4>Title:<%= result.Title%>
+        <div class="blog-real-ssection" style="flex-direction: column;">
+            <div style="display: flex;">
+        <h4>Title:<%= result.Title %>
         <br>
         Blog:<%= result.main_blog %>
         </h4>
