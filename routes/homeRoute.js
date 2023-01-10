@@ -4,7 +4,7 @@ const { conn } = require("../db/connection")
 const homeRoute = new express.Router()
 
 homeRoute.get('/', (req, res) => {
-    conn.query("SELECT * FROM railway.posts WHERE Title=kenil ;", function (err, result) {
+    conn.query("SELECT * FROM railway.posts WHERE Title='kenil' ;", function (err, result) {
         if (err) throw err
         res.render("../views/home", { results: result })
 
