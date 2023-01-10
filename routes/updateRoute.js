@@ -12,17 +12,28 @@ updateRoute.post('/:id/update?', (req, res) => {
     let sql = ''
     if (newObj.Title != '' && newObj.main_blog === '') {
         sql = `UPDATE posts SET Title='${newObj.Title}' WHERE idposts=${_id} `
+        conn.query(sql, newObj, (err, result) => {
+            if (err) throw err
+            console.log(result);
+            res.redirect('/')
+        })
     } else if (newObj.Title === '' && newObj.main_blog !== '') {
         sql = `UPDATE posts SET main_blog='${newObj.main_blog}' WHERE idposts=${_id} `
-    } else {
+        conn.query(sql, newObj, (err, result) => {
+            if (err) throw err
+            console.log(result);
+            res.redirect('/')
+        })
+    } else if (newObj.Title !== '' && newObj.main_blog !== '') {
         sql = `UPDATE posts SET ? WHERE idposts=${_id} `
-    }
-
-    conn.query(sql, newObj, (err, result) => {
-        if (err) throw err
-        console.log(result);
+        conn.query(sql, newObj, (err, result) => {
+            if (err) throw err
+            console.log(result);
+            res.redirect('/')
+        })
+    } else {
         res.redirect('/')
-    })
+    }
 
 })
 
