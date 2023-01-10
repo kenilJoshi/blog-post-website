@@ -162,7 +162,7 @@
         <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
         <div class="blog-real-ssection">
-            <div>
+            <div style="display: flex;">
         <h4>Title:<%= result.Title%>
         <br>
         Blog:<%= result.main_blog %>
@@ -172,7 +172,7 @@
         <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
         <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
         </div>
-        
+        </div>
         <br>
         <div id="displayEditForm" style="display: block;">
         <form method="post" action="/:<%= result.idposts %>/update">
