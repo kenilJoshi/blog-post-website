@@ -44,6 +44,41 @@
     .full-form{
         padding: 3rem;
     }
+    .input-title{
+        padding: 0px;
+    margin: 0px;
+    }
+    .input-title label{
+        font-size: 20px;
+    padding: 0px 11px 0px 0px;
+    }
+    .input-title input{
+        width: 239px;
+    height: 32px;
+    border-radius: 6px;
+    padding: 0px 0px 0px 5px;
+    }
+    .input-textarea label{
+        font-size: 20px;
+
+    }
+    .input-textarea textarea{
+        width: 317px;
+    height: 105px;
+    padding: 4px;
+    border-radius: 5px;
+    }
+    .full-form button{
+        position: relative;
+    top: -20px;
+    width: 96px;
+    text-align: center;
+    height: 42px;
+    border-radius: 10px;
+    background-color: #f7b5c1;
+    border: none;
+    cursor: pointer;
+    }
 
 </style>
 
@@ -54,12 +89,12 @@
     <div class="form-container">
         <form action="/blog/post" method="post">
             <div class="full-form">
-                <div>
+                <div class="input-title">
             <label for="username"> Title:</label>
             <input type="text" id="Title" name="Title" placeholder="Title" required>
         </div>
             <br>
-            <div></div>
+            <div class="input-textarea">
             <label for="freeform">Blog Post:</label>
             <br>
             <textarea id="main_body" name="main_body" rows="4" cols="50"></textarea>
