@@ -25,6 +25,7 @@
 
     <div>
         <h2>Blogs</h2>
+        <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
         <h4>Title:<%= result.Title %>
         <br>
@@ -49,6 +50,9 @@
     </div>
         <hr>
     <% }) %>
+    <% }else if(results.length===0) { %>
+        <h3>No Blog</h3>
+    <% } %>
     </div>
 </body>
 <script>
