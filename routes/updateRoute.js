@@ -11,9 +11,9 @@ updateRoute.post('/:id/update?', (req, res) => {
     console.log(_id);
     let sql = ''
     if (newObj.Title != '' && newObj.main_blog === '') {
-        sql = `UPDATE posts SET Title=${newObj.Title} WHERE idposts=${_id} `
+        sql = `UPDATE posts SET Title='${newObj.Title}' WHERE idposts=${_id} `
     } else if (newObj.Title === '' && newObj.main_blog !== '') {
-        sql = `UPDATE posts SET main_blog=${newObj.main_blog} WHERE idposts=${_id} `
+        sql = `UPDATE posts SET main_blog='${newObj.main_blog}' WHERE idposts=${_id} `
     } else {
         sql = `UPDATE posts SET ? WHERE idposts=${_id} `
     }
