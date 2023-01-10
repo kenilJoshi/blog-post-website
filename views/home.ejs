@@ -85,12 +85,11 @@
     justify-content: center;
     padding: 24px;
     }
-    .blog-section{
-        display: flex;
+    .blog-section{display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 30px;
     width: 24rem;
     height: 22rem;
     box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
@@ -104,22 +103,28 @@
     }
     .blog-real-ssection{
         display: flex;
+        flex-direction: column;
         padding: 12px;
+    }
+    .only-blog{
+        display: flex;
     }
     .blog-real-ssection h4{
         width: 237px;
     }
     .blog-real-ssection button{
         position: relative;
-        top: 20px;
-    left: 100px;
-    width: 96px;
+    top: -4px;
+    left: 0px;
+    width: 60px;
     text-align: center;
-    height: 42px;
+    height: 22px;
     border-radius: 10px;
     background-color: #f7b5c1;
     border: none;
     cursor: pointer;
+    padding: 0px;
+    margin: 1px 0px 0px;
     }
 
 
@@ -161,27 +166,30 @@
         <% if(results.length!=0){ %>
     <% results.forEach(function(result,i){ %>
         <div class="blog-real-ssection">
-        <h4>Title:<%= result.Title %>
-        <br>
-        Blog:<%= result.main_blog %>
-        </h4>
-        <br>
-        <div style="display: flex; flex-direction: column;">
-        <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
-        <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
+            <div class="only-blog">
+                <h4>
+                    Title:<%= result.Title %>
+                    <br>
+                    Blog:<%= result.main_blog %>
+                </h4>
+                <br>
+                <div style="display: flex; flex-direction: column;">
+                    <button id="editForm" onClick="displayFunction()" style="display: block;" >Edit</button>
+                    <a href="/:<%=result.idposts%>/delete"><button>Delete</button></a>
+                </div>
+            </div>
+            <br>
+            <div id="displayEditForm" style="display: none;">
+                <form method="post" action="/:<%= result.idposts %>/update">
+                <label for="username"> Title:</label>
+                <input type="text" id="Title" name="Title" placeholder="Title">
+                <label for="freeform">Blog Post:</label>
+                <br>
+                <textarea id="main_blog" name="main_blog" rows="4" cols="50"></textarea>
+                <br>
+                <button type="submit">Edit</button>  
+            </form>
         </div>
-        <br>
-        <div id="displayEditForm" style="display: none;">
-        <form method="post" action="/:<%= result.idposts %>/update">
-            <label for="username"> Title:</label>
-            <input type="text" id="Title" name="Title" placeholder="Title">
-            <label for="freeform">Blog Post:</label>
-            <br>
-            <textarea id="main_blog" name="main_blog" rows="4" cols="50"></textarea>
-            <br>
-            <button type="submit">Edit</button>  
-        </form>
-    </div>
         <hr>
     </div>
     <% }) %>
