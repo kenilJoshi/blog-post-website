@@ -11,8 +11,8 @@ homeRoute.get('/', (req, res) => {
     })
 })
 
-homeRoute.get('/getUser', (req, res) => {
-    console.log(req.body.Title);
+homeRoute.post('/getUser', (req, res) => {
+    console.log(req.body.title);
     let sql = `SELECT * FROM railway.posts
     WHERE Title='${req.body.title}';`
     conn.query(sql, function (err, result) {

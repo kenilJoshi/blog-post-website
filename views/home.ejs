@@ -25,8 +25,8 @@
 
     <div>
         <h2>Blogs</h2>
-        <form method="get" action="/getUser">
-            <input type="text" id="title" name="Title" />
+        <form method="post" action="/getUser">
+            <input type="text" id="title" name="title" />
             <button type="submit">Search</button>
         </form>
         <% if(results.length!=0){ %>
